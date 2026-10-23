@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Frame from "@/components/Frame";
 import PageHero from "@/components/PageHero";
 import { content } from "@/content";
 
@@ -14,37 +15,56 @@ export default function ContactPage() {
   return (
     <main>
       <PageHero
-        index="Contact"
-        title="Neem contact op"
-        intro="Heeft u vragen of bent u geïnteresseerd in één van onze diensten? Bel of mail ons, of stuur uw tekening voor een offerte."
+        index="Blad 08 — Contact"
+        title="Bel of mail ons"
+        intro="Heeft u vragen of bent u geïnteresseerd in één van onze diensten? U belt, u mailt, of u stuurt uw tekening voor een offerte."
       />
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-2">
-        <section data-section="gegevens" className="border border-foreground/20 p-6">
-          <h2 className="text-2xl font-semibold">KNICO</h2>
-          <p className="mt-3 text-lg text-body">
-            {company.city}, in de {company.region}, aan de Duitse grens.
-          </p>
-          <p className="mt-3 text-base text-body">Openingstijden publiceren wij niet. Bel of mail ons.</p>
-          <a href={company.phoneTel} className="mt-4 flex h-12 items-center text-xl font-semibold text-brand">
-            {company.phoneDisplay}
+      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+        <div className="grid gap-4 md:grid-cols-3">
+          <a href={company.phoneTel} data-section="bellen" className="card-lift border border-steel p-6">
+            <p className="font-mono text-xs text-brand">01</p>
+            <h2 className="mt-2 text-2xl font-semibold">Bellen</h2>
+            <p className="mt-2 text-base text-body">Direct met de werkplaats.</p>
+            <p className="mt-4 text-xl font-semibold text-brand">{company.phoneDisplay}</p>
           </a>
-          <a href={`mailto:${company.email}`} className="flex h-12 items-center text-lg text-brand underline">
-            {company.email}
+          <a href={`mailto:${company.email}`} data-section="mailen" className="card-lift border border-steel p-6">
+            <p className="font-mono text-xs text-brand">02</p>
+            <h2 className="mt-2 text-2xl font-semibold">Mailen</h2>
+            <p className="mt-2 text-base text-body">Voor een vraag of een tekening als bijlage.</p>
+            <p className="mt-4 text-lg font-semibold text-brand underline">{company.email}</p>
           </a>
-        </section>
-        <section data-section="offerte-verwijzing" className="bg-muted p-6">
-          <h2 className="text-2xl font-semibold">Een prijs voor uw onderdeel</h2>
-          <p className="mt-3 text-lg text-body">
-            Voor een offerte stuurt u een tekening, het aantal en het materiaal. Het formulier opent een e-mail naar{" "}
-            {company.email}; de tekening voegt u zelf als bijlage toe.
-          </p>
-          <Link
-            href="/offerte"
-            data-cta="offerte"
-            className="mt-6 inline-flex h-12 items-center bg-brand px-5 font-semibold text-white"
-          >
-            Offerte aanvragen
+          <Link href="/offerte" data-cta="offerte" data-section="offerte-verwijzing" className="card-lift bg-brand p-6 text-white">
+            <p className="font-mono text-xs text-white/80">03</p>
+            <h2 className="mt-2 text-2xl font-semibold text-white">Tekening</h2>
+            <p className="mt-2 text-base text-white/90">Aantal, materiaal en de bewerkingen. De prijs vraagt u hier.</p>
+            <p className="mt-4 text-lg font-semibold">Offerte aanvragen</p>
           </Link>
+        </div>
+        <section data-section="gegevens" className="mt-10">
+          <Frame>
+            <div className="grid md:grid-cols-[1fr_1fr]">
+              <div className="p-6 sm:p-8">
+                <h2 className="text-2xl font-semibold">KNICO CNC Metaalbewerking</h2>
+                <p className="mt-3 text-lg text-body">
+                  {company.city}, in de {company.region}, aan de Duitse grens.
+                </p>
+                <p className="mt-3 text-base text-body">Bel of mail ons. Voor een offerte stuurt u uw tekening.</p>
+              </div>
+              <div className="border-t border-foreground/15 p-6 md:border-l md:border-t-0 sm:p-8" data-section="ligging">
+                <p className="font-mono text-xs text-brand">Ligging</p>
+                <div className="mt-4 flex items-center gap-2 font-mono text-sm text-foreground" aria-hidden>
+                  <span>Achterhoek</span>
+                  <span className="h-px flex-1 bg-brand" />
+                  <span className="text-brand">Dinxperlo</span>
+                  <span className="h-px flex-1 bg-brand" />
+                  <span>grens</span>
+                </div>
+                <p className="mt-4 text-base text-body">
+                  Dinxperlo ligt in de Achterhoek, direct aan de Duitse grens. Bel of mail ons voor de weg ernaartoe.
+                </p>
+              </div>
+            </div>
+          </Frame>
         </section>
       </div>
     </main>

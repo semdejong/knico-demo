@@ -4,6 +4,8 @@ export type Photo = {
   height: number;
   alt: string;
   caption: string;
+  bewerking?: string;
+  href?: string;
 };
 
 export const hallPhotos: Photo[] = [
@@ -52,6 +54,8 @@ export const productPhotos: Photo[] = [
     height: 477,
     alt: "Gedraaide flensbus met gatencirkel, buitendraad en een boring in de flens, op een lichte achtergrond.",
     caption: "Gedraaide flensbus",
+    bewerking: "Draaien",
+    href: "/diensten#draaien",
   },
   {
     src: "/fotos/product-aluminium-plaat.jpg",
@@ -59,6 +63,8 @@ export const productPhotos: Photo[] = [
     height: 475,
     alt: "Gefreesde aluminium plaat met een achtvormige uitsparing, kleine boringen en afgeschuinde hoeken.",
     caption: "Gefreesde aluminium plaat",
+    bewerking: "Frezen",
+    href: "/diensten#frezen",
   },
   {
     src: "/fotos/product-aluminium-arm.jpg",
@@ -66,6 +72,8 @@ export const productPhotos: Photo[] = [
     height: 477,
     alt: "Gefreesde aluminium arm met een grote boring, kleinere gaten en een haakvormig uiteinde.",
     caption: "Gefreesde aluminium arm",
+    bewerking: "Frezen",
+    href: "/diensten#frezen",
   },
   {
     src: "/fotos/product-klemstuk.jpg",
@@ -73,6 +81,8 @@ export const productPhotos: Photo[] = [
     height: 488,
     alt: "Gefreesd metalen klemstuk met twee ronde boringen en een sleuf, op een witte achtergrond.",
     caption: "Gefreesd klemstuk",
+    bewerking: "Frezen",
+    href: "/diensten#frezen",
   },
   {
     src: "/fotos/product-kunststof-bus.jpg",
@@ -80,5 +90,7 @@ export const productPhotos: Photo[] = [
     height: 475,
     alt: "Witte kunststof bus met ovale uitsparingen in de wand, op een lichte achtergrond.",
     caption: "Kunststof bus",
+    bewerking: "Kunststof",
+    href: "/diensten#draaien",
   },
 ];

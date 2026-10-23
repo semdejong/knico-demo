@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import FaqList from "@/components/FaqList";
+import Frame from "@/components/Frame";
 import OfferteForm from "@/components/OfferteForm";
 import PageHero from "@/components/PageHero";
 import { content } from "@/content";
@@ -31,19 +32,27 @@ export default function OffertePage() {
   return (
     <main>
       <PageHero
-        index="Offerte"
+        index="Blad 07 — Offerte"
         title="Offerte aanvragen – stuur uw tekening"
         intro="Enkel stuks tot middelgrote series in kunststof, aluminium en roestvast staal."
       />
       <div className="mx-auto grid max-w-6xl gap-12 px-4 py-12 sm:px-6 lg:grid-cols-[0.85fr_1.15fr]">
         <div className="space-y-10">
           <section data-section="wat-meesturen">
-            <h2 className="text-2xl font-semibold">Wat u meestuurt</h2>
-            <ul className="mt-3 list-disc space-y-1 pl-5 text-base text-body">
-              {meenemen.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
+            <Frame>
+              <div className="p-5">
+                <p className="font-mono text-xs text-brand">Bijlage</p>
+                <h2 className="mt-1 text-2xl font-semibold">Wat u meestuurt</h2>
+                <ul className="mt-3 space-y-2 text-base text-body">
+                  {meenemen.map((item, index) => (
+                    <li key={item} className="flex gap-3">
+                      <span className="font-mono text-sm text-brand">{String(index + 1).padStart(2, "0")}</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Frame>
             <p className="mt-4 text-base">
               Liever direct mailen?{" "}
               <a className="font-semibold text-brand underline" href={`mailto:${company.email}`}>

@@ -1,11 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import { machineGroups } from "@/lib/machines";
+import { machineGroups, machineLabel } from "@/lib/machines";
+
+const numbered = (() => {
+  let n = 0;
+  return machineGroups.map((group) => ({
+    ...group,
+    machines: group.machines.map((machine) => ({ ...machine, nr: String(++n).padStart(2, "0") })),
+  }));
+})();
 
 export default function MachineFilter() {
   const [active, setActive] = useState("alles");
-  const groups = active === "alles" ? machineGroups : machineGroups.filter((g) => g.id === active);
+  const groups = active === "alles" ? numbered : numbered.filter((g) => g.id === active);
 
   return (
     <div data-section="machine-lijst">
@@ -24,12 +32,17 @@ export default function MachineFilter() {
             <p className="mt-2 max-w-3xl text-base text-body">{group.summary}</p>
             <ul className="mt-4 grid gap-3 sm:grid-cols-2">
               {group.machines.map((machine) => (
-                <li key={machine.id} className="border border-steel bg-white p-4">
-                  <p className="font-mono text-xs text-brand">{machine.kind}</p>
-                  <p className="mt-1 text-lg font-semibold text-foreground">
-                    {machine.brand} {machine.type}
-                  </p>
-                  {machine.notes ? <p className="mt-1 text-base text-body">{machine.notes}</p> : null}
+                <li key={machine.id} className="card-lift border border-steel bg-white">
+                  <div className="flex items-center justify-between gap-3 border-b border-steel px-4 py-2 font-mono text-xs">
+                    <span className="text-brand">{machine.nr}</span>
+                    <span className="text-body">{machine.kind}</span>
+                  </div>
+                  <div className="p-4">
+                    <p className="text-lg font-semibold text-foreground">{machineLabel(machine)}</p>
+                    {machine.notes ? (
+                      <p className="mt-2 border-l-2 border-signal pl-2 text-base text-body">{machine.notes}</p>
+                    ) : null}
+                  </div>
                 </li>
               ))}
             </ul>

@@ -71,3 +71,8 @@ export const machineGroups: MachineGroup[] = [
 ];
 
 export const machineCount = machineGroups.reduce((n, g) => n + g.machines.length, 0);
+
+export function machineLabel(machine: { brand: string; type: string }) {
+  if (!machine.type || machine.type === machine.brand) return machine.brand;
+  return `${machine.brand} ${machine.type}`;
+}

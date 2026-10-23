@@ -9,6 +9,7 @@ import Omstempelen from "@/components/home/Omstempelen";
 import Familie from "@/components/home/Familie";
 import HalTeaser from "@/components/home/HalTeaser";
 import Werkwijze from "@/components/home/Werkwijze";
+import BladIndex from "@/components/home/BladIndex";
 import Bereikbaarheid from "@/components/home/Bereikbaarheid";
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
       <Familie />
       <HalTeaser />
       <Werkwijze />
+      <BladIndex />
       <Bereikbaarheid />
     </main>
   );
