@@ -16,7 +16,10 @@ export default function HalTeaser() {
           <Photo photo={hallPhotos[1]} className="w-full" />
           <Photo photo={hallPhotos[0]} className="w-full" />
         </div>
-        <Photo photo={toolPhoto} className="mt-4" />
+        <figure className="mt-4 max-w-[804px] border border-steel bg-muted p-2">
+          <Photo photo={toolPhoto} />
+          <figcaption className="mt-2 px-1 font-mono text-xs text-brand">{toolPhoto.caption}</figcaption>
+        </figure>
         <Link href="/productieruimte" className="mt-6 inline-flex h-12 items-center font-semibold text-brand">
           Bekijk de productieruimte
         </Link>

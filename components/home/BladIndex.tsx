@@ -7,7 +7,7 @@ export default function BladIndex() {
     <section data-section="inhoud" className="border-b border-steel">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <SectionHeading
-          index="12"
+          index="11"
           title="Inhoud van het blad"
           intro="Acht pagina’s, dezelfde volgorde als een tekening: eerst wat wij maken, dan de machines, de hal en de voorbeelden."
         />

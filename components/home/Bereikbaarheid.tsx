@@ -10,11 +10,11 @@ export default function Bereikbaarheid() {
         <div className="border border-foreground/20">
           <div className="grid gap-6 p-6 sm:p-8 md:grid-cols-2">
             <div>
-              <p className="font-mono text-sm text-brand">11</p>
+              <p className="font-mono text-sm text-brand">12</p>
               <h2 className="mt-1 text-3xl font-semibold sm:text-4xl">Bel of mail ons</h2>
               <p className="mt-3 text-lg text-body">
-                KNICO zit in {company.city}, in de {company.region}, aan de Duitse grens. Openingstijden publiceren wij
-                niet: u belt of mailt, of u stuurt uw tekening.
+                KNICO zit in {company.city}, in de {company.region}, aan de Duitse grens. Bel of mail ons, of stuur uw
+                tekening.
               </p>
             </div>
             <div className="font-mono text-sm">

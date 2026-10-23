@@ -7,10 +7,15 @@ const facts = [
 
 export default function Kerncijfers() {
   return (
-    <section data-section="kerncijfers" className="border-b border-steel bg-white">
-      <div className="mx-auto grid max-w-6xl grid-cols-2 md:grid-cols-4">
-        {facts.map((fact) => (
-          <div key={fact.index} className="border-steel px-4 py-8 sm:px-6 md:border-l md:first:border-l-0">
+    <section data-section="kerncijfers" className="bg-white">
+      <div className="mx-auto grid max-w-6xl grid-cols-2 border-y border-steel md:grid-cols-4">
+        {facts.map((fact, index) => (
+          <div
+            key={fact.index}
+            className={`px-4 py-8 sm:px-6 ${index % 2 === 0 ? "border-r border-steel md:border-r-0" : ""} ${
+              index < 2 ? "border-b border-steel md:border-b-0" : ""
+            } ${index > 0 ? "md:border-l md:border-steel" : ""}`}
+          >
             <p className="font-display text-3xl font-semibold text-foreground sm:text-4xl">{fact.index}</p>
             <p className="mt-1 text-base text-body">{fact.label}</p>
             <span className="mt-3 block h-px w-10 bg-signal" aria-hidden />

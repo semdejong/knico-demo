@@ -49,7 +49,7 @@ export default function ProductieruimtePage() {
             <figcaption className="mt-2 font-mono text-sm text-brand">{toolPhoto.caption}</figcaption>
           </Frame>
           <p className="mt-3 max-w-3xl text-base text-body">
-            Een smalle opname van de gereedschapsrevolver: twee frezen in de houder. De foto blijft op zijn eigen maat.
+            Een smalle opname van de gereedschapsrevolver, met twee frezen in de houder.
           </p>
         </figure>
       </div>

@@ -18,7 +18,7 @@ export default function Footer() {
             </div>
             <div>
               <p className="font-mono text-xs uppercase tracking-wider text-white/50">Menu</p>
-              <ul className="mt-3 space-y-1">
+              <ul className="mt-3 grid grid-cols-2 gap-x-4 md:grid-cols-1">
                 {pages.map((item) => (
                   <li key={item.href}>
                     <Link
