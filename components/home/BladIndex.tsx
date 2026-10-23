@@ -21,7 +21,7 @@ export default function BladIndex() {
               >
                 <span className="font-mono text-sm text-brand">{blad.nr}</span>
                 <span className="font-semibold text-foreground">{blad.title}</span>
-                <span className="text-base text-body sm:col-auto col-span-1">{blad.line}</span>
+                <span className="col-start-2 text-base text-body sm:col-start-auto">{blad.line}</span>
               </Link>
             </li>
           ))}

@@ -1,59 +1,47 @@
-import { useId, type ReactNode } from "react";
+import { useId } from "react";
 
-const letters: { char: string; angle: number; Glyph: () => ReactNode }[] = [
-  { char: "N", angle: 0, Glyph: N },
-  { char: "I", angle: 72, Glyph: I },
-  { char: "C", angle: 144, Glyph: C },
-  { char: "O", angle: 216, Glyph: O },
-  { char: "K", angle: 288, Glyph: K },
+const letters: { char: string; angle: number }[] = [
+  { char: "K", angle: -90 },
+  { char: "N", angle: -18 },
+  { char: "I", angle: 54 },
+  { char: "C", angle: 126 },
+  { char: "O", angle: 198 },
 ];
 
 function LogoMark({ className = "h-12 w-12", face = "#111111" }: { className?: string; face?: string }) {
   const grad = `knico-depth-${useId().replace(/:/g, "")}`;
+  const cut = face === "#111111" ? "#FFFFFF" : "#1E2226";
 
   return (
     <svg viewBox="0 0 100 100" className={className} aria-hidden="true">
       <defs>
-        <linearGradient id={grad} x1="0" y1="1" x2="1" y2="0">
+        <linearGradient id={grad} x1="0" y1="0" x2="1" y2="0">
           <stop offset="0%" stopColor="#1D6FA5" />
-          <stop offset="45%" stopColor="#2686C5" />
-          <stop offset="100%" stopColor="#D7F0FA" />
+          <stop offset="55%" stopColor="#2686C5" />
+          <stop offset="100%" stopColor="#BFE6F7" />
         </linearGradient>
       </defs>
-      <g className="logo-ring-spin">
-        {letters.map((letter) => (
-          <g key={letter.char} transform={`translate(50 50) rotate(${letter.angle}) translate(0 -28)`}>
-            <g transform="translate(2.4 2.8)" fill="none" stroke={`url(#${grad})`} strokeWidth="8" strokeLinejoin="miter" strokeLinecap="butt">
-              <letter.Glyph />
-            </g>
-            <g fill="none" stroke={face} strokeWidth="6.2" strokeLinejoin="miter" strokeLinecap="butt">
-              <letter.Glyph />
-            </g>
-          </g>
+      <circle cx="53" cy="51" r="33" fill="none" stroke={`url(#${grad})`} strokeWidth="21" />
+      <circle cx="48" cy="48" r="33" fill="none" stroke={face} strokeWidth="21" />
+      <g className="logo-ring-spin" style={{ transformOrigin: "48px 48px" }}>
+        {letters.map((l) => (
+          <text
+            key={l.char}
+            x="48"
+            y="21"
+            transform={`rotate(${l.angle} 48 48)`}
+            textAnchor="middle"
+            fontSize="20"
+            fontWeight="900"
+            fontFamily="Arial, Helvetica, sans-serif"
+            fill={cut}
+          >
+            {l.char}
+          </text>
         ))}
       </g>
     </svg>
   );
-}
-
-function K() {
-  return <path d="M-9 -11 V11 M-9 0 L8 -11 M-9 0 L9 11" />;
-}
-
-function N() {
-  return <path d="M-8 -11 V11 M-8 -11 L8 11 M8 -11 V11" />;
-}
-
-function I() {
-  return <path d="M0 -11 V11" />;
-}
-
-function C() {
-  return <path d="M7 -9 A11 11 0 1 0 7 9" />;
-}
-
-function O() {
-  return <circle r="9" />;
 }
 
 export default function Logo({

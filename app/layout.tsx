@@ -89,7 +89,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Naar inhoud
         </a>
         <div className="sticky top-0 z-50">
-          <SleadsBadge />
           <Header />
         </div>
         <div id="inhoud" className="flex-1 pb-24 md:pb-0">
