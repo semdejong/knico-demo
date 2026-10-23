@@ -1,23 +1,31 @@
-import Header from "@/components/sections/Header";
-import Hero from "@/components/sections/Hero";
-import Services from "@/components/sections/Services";
-import About from "@/components/sections/About";
-import Reviews from "@/components/sections/Reviews";
-import Contact from "@/components/sections/Contact";
-import Footer from "@/components/sections/Footer";
+import Hero from "@/components/home/Hero";
+import Kerncijfers from "@/components/home/Kerncijfers";
+import Bewerkingen from "@/components/home/Bewerkingen";
+import EenHuis from "@/components/home/EenHuis";
+import MachineHighlight from "@/components/home/MachineHighlight";
+import Materialen from "@/components/home/Materialen";
+import Werkvoorbeelden from "@/components/home/Werkvoorbeelden";
+import Omstempelen from "@/components/home/Omstempelen";
+import Familie from "@/components/home/Familie";
+import HalTeaser from "@/components/home/HalTeaser";
+import Werkwijze from "@/components/home/Werkwijze";
+import Bereikbaarheid from "@/components/home/Bereikbaarheid";
 
 export default function Home() {
   return (
-    <>
-      <Header />
-      <main className="flex-1">
-        <Hero />
-        <Services />
-        <About />
-        <Reviews />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <main>
+      <Hero />
+      <Kerncijfers />
+      <Bewerkingen />
+      <EenHuis />
+      <MachineHighlight />
+      <Materialen />
+      <Werkvoorbeelden />
+      <Omstempelen />
+      <Familie />
+      <HalTeaser />
+      <Werkwijze />
+      <Bereikbaarheid />
+    </main>
   );
 }

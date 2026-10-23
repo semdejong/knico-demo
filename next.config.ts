@@ -23,6 +23,12 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      { source: "/links", destination: "/", permanent: false },
+      { source: "/voorbeeld-pagina", destination: "/", permanent: false },
+    ];
+  },
 };
 
 export default nextConfig;

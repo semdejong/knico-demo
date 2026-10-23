@@ -1,102 +1,56 @@
-/**
- * ÉÉN bestand om aan te passen per demo.
- * Kopieer de starter, vul hieronder de gegevens van de prospect in, klaar.
- */
+/** KNICO-demo. Slug blijft "knico-demo" voor de Sleads-tracker. */
 export const content = {
-  // Slug = Vercel-project- en GitHub-reponaam (eindigt op "-demo"). Wordt door scripts/new-demo.sh gezet.
-  // Ook de "data-demo" voor de Sleads demo-analytics tracker.
   slug: "knico-demo",
 
   company: {
-    name: "Voorbeeldbedrijf",
-    tagline: "Vakmanschap uit de regio, sinds 1998",
+    name: "KNICO",
+    legal: "KNICO VOF",
+    tagline: "CNC Metaalbewerking",
     description:
-      "Wij helpen particulieren en bedrijven met betrouwbaar werk, eerlijk advies en een persoonlijke aanpak.",
-    logo: "/logo.png", // zet het logo in /public en pas het pad aan ("" = alleen tekst)
-    city: "Utrecht",
+      "Toeleveringsbedrijf voor CNC draai- en freeswerk in kunststof, aluminium en roestvast staal. Enkel stuks tot middelgrote series, vanuit Dinxperlo.",
+    city: "Dinxperlo",
+    region: "Achterhoek",
+    phoneDisplay: "0315-655424",
+    phoneTel: "tel:+31315655424",
+    email: "info@knico.nl",
   },
 
-  // Huisstijlkleuren van de prospect (hex)
   colors: {
-    primary: "#1d4ed8",
+    primary: "#1D6FA5",
     primaryForeground: "#ffffff",
-    accent: "#f59e0b",
+    accent: "#2686C5",
     background: "#ffffff",
-    foreground: "#0f172a",
-    muted: "#f1f5f9",
+    foreground: "#2D2D2D",
+    muted: "#F3F4F5",
   },
 
   seo: {
-    title: "Voorbeeldbedrijf | Vakmanschap uit Utrecht",
-    description: "Conceptwebsite voor Voorbeeldbedrijf.",
+    title: "KNICO CNC Metaalbewerking | Draai- en freeswerk uit Dinxperlo",
+    description:
+      "KNICO in Dinxperlo maakt CNC draai- en freeswerk van enkel stuks tot middelgrote series, in kunststof, aluminium en roestvast staal. Stuur uw tekening voor een offerte.",
     lang: "nl",
   },
 
   nav: [
-    { label: "Diensten", href: "#diensten" },
-    { label: "Over ons", href: "#over-ons" },
-    { label: "Reviews", href: "#reviews" },
-    { label: "Contact", href: "#contact" },
+    { label: "Diensten", href: "/diensten" },
+    { label: "Machinepark", href: "/machinepark" },
+    { label: "Productieruimte", href: "/productieruimte" },
+    { label: "Omstempelen", href: "/omstempelen" },
+    { label: "Over ons", href: "/over-ons" },
+    { label: "Contact", href: "/contact" },
   ],
 
-  hero: {
-    title: "Vakwerk waar u op kunt bouwen",
-    subtitle:
-      "Snel geregeld, duidelijk geprijsd en netjes opgeleverd. Vraag vandaag nog vrijblijvend een offerte aan.",
-    primaryCta: { label: "Offerte aanvragen", href: "#contact" },
-    secondaryCta: { label: "Bekijk onze diensten", href: "#diensten" },
-    image: "", // bv. "/hero.jpg" in /public of een externe URL; leeg = kleurverloop
-    highlights: ["25+ jaar ervaring", "Gratis advies aan huis", "Garantie op al ons werk"],
-  },
-
-  services: {
-    title: "Onze diensten",
-    intro: "Alles onder één dak, van eerste advies tot oplevering.",
-    items: [
-      { icon: "🛠️", title: "Dienst één", text: "Korte omschrijving van wat deze dienst inhoudt en wat de klant eraan heeft." },
-      { icon: "📐", title: "Dienst twee", text: "Korte omschrijving van wat deze dienst inhoudt en wat de klant eraan heeft." },
-      { icon: "✅", title: "Dienst drie", text: "Korte omschrijving van wat deze dienst inhoudt en wat de klant eraan heeft." },
-    ],
-  },
-
-  about: {
-    title: "Over ons",
-    text: [
-      "Wat begon als een klein familiebedrijf is uitgegroeid tot een vertrouwd adres in de regio.",
-      "We werken met vaste vakmensen, houden ons aan afspraken en staan ook na de oplevering voor u klaar.",
-    ],
-    image: "", // optioneel
-    stats: [
-      { value: "25+", label: "jaar ervaring" },
-      { value: "1.200+", label: "tevreden klanten" },
-      { value: "9,2", label: "gemiddeld cijfer" },
-    ],
-  },
-
-  reviews: {
-    title: "Wat klanten zeggen",
-    items: [
-      { name: "Familie Jansen", text: "Netjes en snel gewerkt, precies volgens afspraak. Echt een aanrader!", rating: 5 },
-      { name: "Petra de Vries", text: "Duidelijke communicatie en een eerlijke prijs. We komen zeker terug.", rating: 5 },
-      { name: "Mark Bakker", text: "Vakkundig advies en mooi resultaat. Heel tevreden.", rating: 5 },
-    ],
-  },
-
-  contact: {
-    title: "Neem contact op",
-    text: "Bel, mail of kom langs. We reageren binnen één werkdag.",
-    phone: "030 123 45 67",
-    email: "info@voorbeeldbedrijf.nl",
-    address: "Voorbeeldstraat 1, 1234 AB Utrecht",
-    openingHours: ["Ma t/m vr: 08:00 – 17:30", "Za: 09:00 – 13:00"],
-    whatsapp: "", // bv. "31612345678" (zonder +)
-    cta: { label: "Bel direct", href: "tel:0301234567" },
-  },
-
-  footer: {
-    kvk: "", // bv. "KvK 12345678"
-    socials: [] as { label: string; href: string }[],
-  },
+  pages: [
+    { label: "Home", href: "/" },
+    { label: "Diensten", href: "/diensten" },
+    { label: "Machinepark", href: "/machinepark" },
+    { label: "Productieruimte", href: "/productieruimte" },
+    { label: "Werkvoorbeelden", href: "/werkvoorbeelden" },
+    { label: "Omstempelen", href: "/omstempelen" },
+    { label: "Over ons", href: "/over-ons" },
+    { label: "Offerte", href: "/offerte" },
+    { label: "Contact", href: "/contact" },
+  ],
 };
 
 export type Content = typeof content;
